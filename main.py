@@ -48,39 +48,42 @@ def math_opperation():
                 return operation
             else:
                 print("Ошибка: Неверная операция!")
-math_opperation()
-while True:
-    print("Доступные операции: +, -, *, /, ^, sqrt, fact, sin, cos, tan")
-    operation = get_operation_input()
-    if operation in ['+', '-', '*', '/', '^']:
-        a = get_number_input("Введите первое число: ")
-        b = get_number_input("Введите второе число: ")
-        if operation == '+':
-            result = add(a, b)
-        elif operation == '-':
-            result = subtract(a, b)
-        elif operation == '*':
-            result = multiply(a, b)
-        elif operation == '/':
-            result = divide(a, b)
-        elif operation == '^':
-            result = power(a, b)
-        if result is not None:
-            print("Ответ: ", result)
-    elif operation in ['sqrt', 'fact', 'sin', 'cos', 'tan']:
-        a = get_number_input("Введите число: ")
-        if operation == 'sqrt':
-            result = square_root(a)
-        elif operation == 'fact':
-            result = factorial(int(a))
-        elif operation == 'sin':
-            result = sin(a)
-        elif operation == 'cos':
-            result = cos(a)
-        elif operation == 'tan':
-            result = tan(a)
-        if result is not None:
-            print("Ответ: ", result)
-    choice = input("Хотите продолжить вычисления? (y/n): ")
-    if choice.lower() != 'y':
-        break
+def main():
+    math_opperation()
+    while True:
+        print("Доступные операции: +, -, *, /, ^, sqrt, fact, sin, cos, tan")
+        operation = get_operation_input()
+        if operation in ['+', '-', '*', '/', '^']:
+            a = get_number_input("Введите первое число: ")
+            b = get_number_input("Введите второе число: ")
+            if operation == '+':
+                result = add(a, b)
+            elif operation == '-':
+                result = subtract(a, b)
+            elif operation == '*':
+                result = multiply(a, b)
+            elif operation == '/':
+                result = divide(a, b)
+            elif operation == '^':
+                result = power(a, b)
+            if result is not None:
+                print("Ответ: ", result)
+        elif operation in ['sqrt', 'fact', 'sin', 'cos', 'tan']:
+            a = get_number_input("Введите число: ")
+            if operation == 'sqrt':
+                result = square_root(a)
+            elif operation == 'fact':
+                result = factorial(int(a))
+            elif operation == 'sin':
+                result = sin(a)
+            elif operation == 'cos':
+                result = cos(a)
+            elif operation == 'tan':
+                result = tan(a)
+            if result is not None:
+                print("Ответ: ", result)
+        choice = input("Хотите продолжить вычисления? (y/n): ")
+        if choice.lower() != 'y':
+            break
+if __name__ == '__main__':
+    main()
